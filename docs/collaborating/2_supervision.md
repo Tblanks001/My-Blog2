@@ -11,7 +11,7 @@ last_update:
   author: Federico Tartarini
 ---
 
-# Federico Tartarini - Supervision
+# Supervision
 
 :::info
 

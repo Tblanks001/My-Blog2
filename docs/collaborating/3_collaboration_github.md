@@ -11,7 +11,7 @@ last_update:
   author: Federico Tartarini
 ---
 
-# Federico Tartarini - How to collaborate with me on GitHub
+# How to collaborate with me on GitHub
 
 :::info
 
@@ -127,6 +127,10 @@ Please describe the tests that you ran to verify your changes. Provide instructi
 - [ ] Any dependent changes have been merged and published in downstream modules
 
 :::
+
+**AI Reviewer Reminder:**  
+If Coderabbit or any other AI reviewer is enabled for the repository, please address all comments and suggestions made by the AI after submitting your pull request. This helps maintain code quality and ensures all automated feedback is considered before merging.
+
 11. **Review and merge**: Once you have created a pull request, the code owners will review your changes and provide feedback. If everything looks good, they will merge your changes into the main codebase.
 :::danger
 

@@ -11,7 +11,7 @@ last_update:
   author: Federico Tartarini
 ---
 
-# Federico Tartarini - How to communicate with me on Slack
+# How to communicate with me on Slack
 
 The nature of chat apps makes it tempting to blur the lines of workplace conversation.
 Are emojis unprofessional? 
