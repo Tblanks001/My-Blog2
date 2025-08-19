@@ -57,6 +57,47 @@ const config = {
           // Remove this to remove the "edit this page" links.
           editUrl:
             "https://github.com/FedericoTartarini/FedericoTartarini.github.io/tree/master/",
+          // Sort only the "My Research" category in descending order.
+          sidebarItemsGenerator: async function ({
+            defaultSidebarItemsGenerator,
+            ...args
+          }) {
+            const items = await defaultSidebarItemsGenerator(args);
+
+            const getBaseKey = (item) => {
+              const key =
+                item.type === "doc" ? item.id : (item.label ?? "");
+              return key.split("/").pop() ?? key;
+            };
+
+            const processCategory = (cat) => {
+              if (cat.type !== "category" || !Array.isArray(cat.items)) return;
+
+              // Match the category created from docs/my-research/_category_.json
+              if (cat.label === "My Research") {
+                cat.items = cat.items.slice().sort((a, b) => {
+                  const aKey = getBaseKey(a);
+                  const bKey = getBaseKey(b);
+                  // Descending: newest (lexicographically larger) first
+                  return bKey.localeCompare(aKey, undefined, {
+                    numeric: true,
+                    sensitivity: "base",
+                  });
+                });
+              }
+
+              // Recurse into subcategories
+              cat.items.forEach((child) => {
+                if (child.type === "category") processCategory(child);
+              });
+            };
+
+            items.forEach((root) => {
+              if (root.type === "category") processCategory(root);
+            });
+
+            return items;
+          },
         },
         blog: {
           showReadingTime: true,
