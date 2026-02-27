@@ -26,18 +26,9 @@ jobs:
           cache: yarn
 
       - name: Install dependencies & build
-        run: |
-          # Some clones put the Docusaurus site in a subfolder; others have
-          # it at the repository root.  Detect which case applies and
-          # operate accordingly.
-          set -e
-          if [ -d "FedericoTartarini.github.io" ]; then
-            cd FedericoTartarini.github.io
-          fi
-          pwd
-          ls -la
-          yarn install --frozen-lockfile
-          yarn build
+        run: yarn install --frozen-lockfile
+      - name: Build website
+        run: yarn build
 
       # Popular action to deploy to GitHub Pages:
       # Docs: https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-docusaurus
