@@ -9,6 +9,8 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write # Required to deploy to GitHub Pages with the `GITHUB_TOKEN
 
 jobs:
   deploy:
