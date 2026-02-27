@@ -1,113 +1,65 @@
 // @ts-check
-// `@type` JSDoc annotations allow editor autocompletion and type checking
-// (when paired with `@ts-check`).
-// There are various equivalent ways to declare your Docusaurus config.
-// See: https://docusaurus.io/docs/api/docusaurus-config
+// Note: type annotations allow type checking and IDEs autocompletion
 
-import { themes as prismThemes } from "prism-react-renderer";
+// themes were previously imported via a nested path, which no longer
+// exists beginning with prism-react-renderer@2.4. The package now
+// exports a `themes` object at the root, so we pull the colours from
+// there instead.
+const { themes: prismThemes } = require('prism-react-renderer');
+const lightCodeTheme = prismThemes.duotoneLight;
+const darkCodeTheme = prismThemes.nightOwl;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Dr Federico Tartarini",
-  tagline:
-    "Senior Lecturer | Horizon Fellow, The University of Sydney",
-  favicon: "img/logo.png",
+  title: 'Gekaku',
+  tagline: 'Click the photo to learn more about me!',
+  favicon: 'img/gpp.jpg',
 
   // Set the production url of your site here
-  url: "https://Tblanks001.github.io",
+  url: 'https://Tblanks001.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/My-Blog2/",
+  baseUrl: '/My-Blog2/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "Tblanks001", // Usually your GitHub org/user name.
-  projectName: "My-Blog2", // Usually your repo name.
+  organizationName: 'Tlbanks001', // Usually your GitHub org/user name.
+  projectName: 'My-Blog2', // Usually your repo name.
+  deploymentBranch: 'gh-pages',
   trailingSlash: false,
-  deploymentBranch: "gh-pages",
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'warn',
 
-  onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
-
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
+  // Even if you don't use internalization, you can use this field to set useful
+  // metadata like html lang. For example, if your site is Chinese, you may want
+  // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: "en",
-    locales: ["en"],
+    defaultLocale: 'en',
+    locales: ['en'],
   },
 
   presets: [
     [
-      "classic",
+      'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        gtag: {
-          trackingID: "G-KGVK27VGQ7",
-          anonymizeIP: true,
-        },
-        sitemap: {
-          changefreq: "weekly",
-          priority: 0.5,
-          filename: "sitemap.xml",
-        },
-        docs: {
-          sidebarPath: "./sidebars.js",
+        // Commening out the docs section
+        // docs: {
+          //sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/FedericoTartarini/FedericoTartarini.github.io/tree/master/",
-          // Sort only the "My Research" category in descending order.
-          sidebarItemsGenerator: async function ({
-            defaultSidebarItemsGenerator,
-            ...args
-          }) {
-            const items = await defaultSidebarItemsGenerator(args);
-
-            const getBaseKey = (item) => {
-              const key =
-                item.type === "doc" ? item.id : (item.label ?? "");
-              return key.split("/").pop() ?? key;
-            };
-
-            const processCategory = (cat) => {
-              if (cat.type !== "category" || !Array.isArray(cat.items)) return;
-
-              // Match the category created from docs/my-research/_category_.json
-              if (cat.label === "My Research") {
-                cat.items = cat.items.slice().sort((a, b) => {
-                  const aKey = getBaseKey(a);
-                  const bKey = getBaseKey(b);
-                  // Descending: newest (lexicographically larger) first
-                  return bKey.localeCompare(aKey, undefined, {
-                    numeric: true,
-                    sensitivity: "base",
-                  });
-                });
-              }
-
-              // Recurse into subcategories
-              cat.items.forEach((child) => {
-                if (child.type === "category") processCategory(child);
-              });
-            };
-
-            items.forEach((root) => {
-              if (root.type === "category") processCategory(root);
-            });
-
-            return items;
-          },
-        },
+          //editUrl:
+          //  'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+        // },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            "https://github.com/FedericoTartarini/FedericoTartarini.github.io/tree/master/",
+            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         theme: {
-          customCss: "./src/css/custom.css",
+          customCss: require.resolve('./src/css/custom.css'),
         },
       }),
     ],
@@ -117,103 +69,82 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: "img/website-card.png",
+      image: 'img/gpp.jpg',
       navbar: {
-        title: "My Site",
+        title: 'Gekaku',
         logo: {
-          alt: "My Site Logo",
-          src: "img/logo.png",
+          alt: 'My Site Logo',
+          src: 'img/gpp.jpg',
         },
         items: [
+          // Commenting out the docs sidebar item
+          // {
+          //   type: 'docSidebar',
+          //   sidebarId: 'docsSidebar',
+          //   position: 'left',
+          //   label: 'Docs',
+          // },
+          
+          { to: '/blog', label: 'Blog', position: 'left' },
+          { to: 'about', label: 'About', position: 'left' },
           {
-            type: "docSidebar",
-            sidebarId: "tutorialSidebar",
-            position: "left",
-            label: "About Me",
-          },
-          { to: "/blog", label: "Blog", position: "left" },
-          {
-            href: "https://github.com/FedericoTartarini",
-            position: "right",
-            className: "header--github-link",
-            "aria-label": "GitHub repository",
-          },
-          {
-            className: "navbar__youtube navbar__icon",
-            "aria-label": "YouTube channel",
-            position: "right",
-            href: "https://www.youtube.com/c/FedericoTartarini",
+            href: 'https://www.youtube.com/@gekaku',
+            label: 'YouTube',
+            position: 'right',
           },
         ],
       },
       footer: {
-        style: "dark",
+        style: 'dark',
         links: [
+          // Commenting out the docs footer section
+          // {
+          //   title: 'Docs',
+          //   items: [
+          //     {
+          //       label: 'Docs',
+          //       to: '/docs/category/custom-title',
+          //     },
+          //   ],
+          // },
+          // {
+          //   title: 'Community',
+          //   items: [
+          //     {
+          //       label: 'Stack Overflow',
+          //       href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+          //     },
+          //     {
+          //       label: 'Discord',
+          //       href: 'https://discordapp.com/invite/docusaurus',
+          //     },
+          //     {
+          //       label: 'Twitter',
+          //       href: 'https://twitter.com/docusaurus',
+          //     },
+          //   ],
+          // },
           {
-            title: "About Me",
+            title: 'More',
             items: [
               {
-                label: "My Work",
-                to: "docs/about_me/intro",
-              },
-            ],
-          },
-          {
-            title: "Community",
-            items: [
-              {
-                label: "LinkedIn",
-                href: "https://www.linkedin.com/in/federico-tartarini/",
+                label: 'Blog',
+                to: '/blog',
               },
               {
-                label: "YouTube",
-                href: "https://www.youtube.com/c/FedericoTartarini",
-              },
-              {
-                label: "Twitter",
-                href: "https://twitter.com/FedericoTartar1",
-              },
-            ],
-          },
-          {
-            title: "More",
-            items: [
-              {
-                label: "Blog",
-                to: "/blog",
-              },
-              {
-                label: "GitHub",
-                href: "https://github.com/FedericoTartarini",
+                label: 'About',
+                href: '/about',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Federico Tartarini. Built with Docusaurus.`,
+        // copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
       },
       prism: {
-        theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
-        additionalLanguages: ["latex"],
+        theme: lightCodeTheme,
+        darkTheme: darkCodeTheme,
       },
     }),
-  stylesheets: ["https://fonts.googleapis.com/icon?family=Material+Icons"],
-  themes: [
-    // ... Your other themes.
-    [
-      require("@easyops-cn/docusaurus-search-local"),
-      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
-      ({
-        // ... Your options.
-        // `hashed` is recommended as long-term-cache of index file is possible.
-        hashed: true,
-        // For Docs using Chinese, The `language` is recommended to set to:
-        // ```
-        // language: ["en", "zh"],
-        // ```
-      }),
-    ],
-  ],
 };
 
-export default config;
+module.exports = config;
