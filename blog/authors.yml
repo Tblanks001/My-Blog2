@@ -1,5 +1,17 @@
-fede:
-  name: Federico Tartarini
-  title: Senior Lecturer
-  url: https://github.com/FedericoTartarini
-  image_url: https://federicotartarini.github.io/img/federico.jpg
+Gekaku:
+  name: Travis Blanks
+  title: Jack of All Trades
+  url: https://travisblanks.com
+  image_url: https://github.com/endiliey.png
+
+yangshun:
+  name: Yangshun Tay
+  title: Front End Engineer @ Facebook
+  url: https://github.com/yangshun
+  image_url: https://github.com/yangshun.png
+
+slorber:
+  name: Sébastien Lorber
+  title: Docusaurus maintainer
+  url: https://sebastienlorber.com
+  image_url: https://github.com/slorber.png
