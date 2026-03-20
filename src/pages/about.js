@@ -7,12 +7,12 @@ export default function About() {
     <Layout>
       <Head>
         <title>About</title>
-        <meta name="description" content="This is the about page...nothin' in it yet!" />
+        <meta name="description" content="This is the about page." />
       </Head>
 
       <div>
         <h1 className="red-text">About</h1>
-        <p>This is the about page.</p>
+        <p>This is the about page...nothin' in it yet!</p>
       </div>
     </Layout>
   );
