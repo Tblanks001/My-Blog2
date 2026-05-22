@@ -1,6 +1,6 @@
 ---
-slug: preparing-to-leave
-title: Preparing to Leave
+slug: prepping-to-leave
+title: Prepping to Leave
 authors:
   Gekaku
 tags: [Daily Life]
