@@ -21,9 +21,9 @@ They thanked me, and have been messaging me if they needed anything else for the
 Here's a scan I made of a Japanese promotional poster of the game I found online years ago. I don't believe I've found an image of this anywhere on the internet. My scanner wasn't big enough for the entire thing, so it's in 4 parts.
 
 
-![Part of a Dual Hearts poster](/img/1.png)
-![Part of a Dual Hearts poster](/img/2.png)
-![Part of a Dual Hearts poster](/img/3.png)
-![Part of a Dual Hearts poster](/img/4.png)
+![Part of a Dual Hearts poster](/img/1.jpg)
+![Part of a Dual Hearts poster](/img/2.jpg)
+![Part of a Dual Hearts poster](/img/3.jpg)
+![Part of a Dual Hearts poster](/img/4.jpg)
 
 I plan on creating a website for the game as well. It'll have all the details I've amassed from the game over the years. I have a bunch of other things no one has seen about the game, and I'm really excited to share it with the world!
