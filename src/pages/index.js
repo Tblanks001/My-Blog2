@@ -9,7 +9,7 @@ import styles from './index.module.css';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 function HomepageHeader() {
-  const imgUrl = useBaseUrl('/img/wendys-1.jpg');
+  const imgUrl = useBaseUrl('/img/20260314_171530.jpg');
   const {siteConfig} = useDocusaurusContext();
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
@@ -18,7 +18,7 @@ function HomepageHeader() {
         <p className="hero__subtitle">{siteConfig.tagline}</p>
                 
         <div className={styles.buttons}>
-          <Link to="/blog/my-time-in-taos">
+          <Link to="/blog/my-trip-to-colorado">
             
 <img src={imgUrl} alt="…" style={{width:120, borderRadius:8}} />
           </Link>
