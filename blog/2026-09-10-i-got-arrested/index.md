@@ -26,7 +26,7 @@ I've recently changed my training regime to mostly isometrics. Isometrics help i
 
 It really sucks, but I lost my Hyundai Azera. When I went to the towing company that took my car after I got arrested, they said it would cost $560 to get it out. I decided it wasn't worth that much. I've learned my lesson after trying to revive my Toyota Camry. I will no longer hold onto an old vehicle that isn't worth my time and money.
 
-![Here's a photo of my arrest information](/img/20260904_114456.jpg)
+![Here's a photo of my car in the towing company's lot](/img/20260904_114456.jpg)
 
 Luckily, my step mom said I could keep her old car. Although I missed a day, it was still the best I've sold at an anime convention. The new car I'm driving is smaller than the last 2 cars I had, but I believe I can get it travel-ready after a few experiments. I'll show it off once I've gotten it ready.
 
